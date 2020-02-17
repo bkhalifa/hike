@@ -1,0 +1,17 @@
+
+    <main role="main" class="container">
+        <h1 class="mt-5">listes des ronndonées</h1>
+        <p class="lead">&nbsp;</p>
+       
+      </main>
+  <div>
+   Filtrer par : <input type="text" [(ngModel)]="searchTerm" />
+  </div>
+      
+    <div *ngFor="let hike of hikes | hikeFilter:searchTerm">
+        <a [routerLink]="['/hikes',hike.id]"> {{hike.name | uppercase}}  </a> -  {{hike.description}}
+        <br>
+        <br>
+  </div>
+        
+

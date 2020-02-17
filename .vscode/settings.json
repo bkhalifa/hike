@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/.hg": false,
+        "**/.svn": false,
+        "**/*.js": true,
+        "**/*.js.map": true,
+        "**/*.spec.ts": true,
+        "**/CVS": false
+    }
+}
