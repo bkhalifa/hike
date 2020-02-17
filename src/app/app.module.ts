@@ -8,11 +8,15 @@ import { HikeModule } from './hike/hike.module';
 import { HomeModule } from './home/home.module';
 import { PageNotFound } from './page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ContactModule } from './contact/contact.module';
+import { AboutModule } from './about/about.module';
 
 @NgModule({
   imports:      [ BrowserModule,
                    HikeModule,
                    HomeModule,
+                   ContactModule,
+                   AboutModule,
                    HttpModule,
                    AppRoutingModule],
 
