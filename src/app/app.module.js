@@ -13,6 +13,8 @@ var hike_module_1 = require("./hike/hike.module");
 var home_module_1 = require("./home/home.module");
 var page_not_found_component_1 = require("./page-not-found.component");
 var app_routing_module_1 = require("./app-routing.module");
+var contact_module_1 = require("./contact/contact.module");
+var about_module_1 = require("./about/about.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,6 +25,8 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule,
             hike_module_1.HikeModule,
             home_module_1.HomeModule,
+            contact_module_1.ContactModule,
+            about_module_1.AboutModule,
             http_1.HttpModule,
             app_routing_module_1.AppRoutingModule],
         declarations: [app_component_1.AppComponent, page_not_found_component_1.PageNotFound],
