@@ -1,0 +1,33 @@
+
+<p> contact</p>
+
+<form #form ="ngForm" (submit)="sendMessage(form)">
+  <div class="form-group"
+   [class.has-error]="!msgSubject.valid && msgSubject.touched">
+    <label for="subject" class="control-label">Sujet</label>
+    <input type="text" class="form-control" placeholder="sujet" required  id="subject" name="subject" #msgSubject ="ngModel" ngModel />
+    <!-- <div *ngIf="!msgSubject.valid && msgSubject.touched"> sujet manquant </div> -->
+</div>
+
+<div class="form-group" [class.has-error]="msgMessage.invalid && msgMessage.touched ">
+  <label for="message" class="control-label">Message</label>
+  <textarea type ="text" class ="form-control" placeholder="message" id="message" required #msgMessage ="ngModel" name="message" ngModel>
+</textarea>
+</div>
+
+
+  <div class="form-group">
+    <label for="service">Service</label>
+
+    <select name="service" class="form-control" id="service" ngModel>
+<option value="tech">technique </option>
+<option value="sales">commercial </option>
+<option value="guide">guide </option>
+
+    </select>
+    </div>
+<button type="submit" class="btn btn-success" [disabled]="form.invalid"> envoyer</button>
+</form>
+Form : {{form.value | json }} <br>
+Etat du Form : {{form.valid | json }} <br>
+{{msgSubject.valid}}
