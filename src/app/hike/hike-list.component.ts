@@ -7,6 +7,7 @@ import {HikeService} from './hike.service';
     moduleId:module.id,
     selector:'hike-list',
     templateUrl:'hike-list.component.html'
+
 })
 
 export class HikeListComponent{
@@ -24,5 +25,9 @@ constructor(private _hikeService: HikeService){}
                          err =>  console.log(err.status)
                            );
      console.log(this.hikes);
+   }
+
+   addToMyToDoHike(hiketoadd: Hike){
+     console.log(`rando  ${hiketoadd.name} ajoutée`);
    }
 }
