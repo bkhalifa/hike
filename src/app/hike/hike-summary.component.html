@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-body">
+  <h5 class="card-title">
+    <a [routerLink]="['/hikes',hk.id]"> {{hk.name | uppercase}}  </a></h5>
+    <p class="card-text">
+      {{hk.description}}
+      </p>
+       <input type="checkbox" (change)="toggleAsTodoHike($event.target.checked)" class="checkbox-inline" />à faire
+  </div>
+</div>
