@@ -12,14 +12,14 @@ import {HikeService} from './hike.service';
 
 export class HikeListComponent{
 
-hikes : Hike[];
+hikes : any[];
 searchTerm :string;
 
 constructor(private _hikeService: HikeService){}
 
 
   ngOnInit(){
-    this._hikeService.GetHikesFromApi()
+    this._hikeService.GetHikesFromApiWithCache()
                      .subscribe(
                          res =>this.hikes = res,
                          err =>  console.log(err.status)
