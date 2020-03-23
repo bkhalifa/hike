@@ -20,9 +20,16 @@ export class HikeService {
 
   constructor(private _http: Http) { }
 
+  GetDetails(id:number){
+   if(id> 10)
+   return false;
+
+   return true;
+}
 
   GetHikesFromApi() {
-    return this._http.get('app/api/hikes.json')
+    return this._http
+               .get('app/api/hikes.json')
       .do(x => console.log(x))
       .map(hikes => hikes.json())
       .catch(error => {

@@ -10,6 +10,7 @@ import { PageNotFound } from './page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContactModule } from './contact/contact.module';
 import { AboutModule } from './about/about.module';
+// import { HikeResolveService } from './hike/hike-resolver.service';
 
 @NgModule({
   imports:      [ BrowserModule,
@@ -21,6 +22,9 @@ import { AboutModule } from './about/about.module';
                    AppRoutingModule],
 
   declarations: [ AppComponent, PageNotFound ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers:[
+    // HikeResolveService
+  ]
 })
 export class AppModule { }

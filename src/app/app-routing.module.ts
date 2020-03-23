@@ -8,11 +8,19 @@ import {HikeDetailsComponent} from './hike/hike-details.component';
 import { PageNotFound } from "./page-not-found.component";
 import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
+// import { HikeResolveService } from "./hike/hike-resolver.service";
+
 
 const routes :any = [
   {path:'home', component:HomeComponent},
-  {path:'hikes', component:HikeListComponent} ,
-  {path:'hikes/:id', component:HikeDetailsComponent} ,
+  {
+    path:'hikes',
+    component:HikeListComponent,
+
+   } ,
+  {path:'hikes/:id',
+  component:HikeDetailsComponent
+  } ,
   {path:'contact', component:ContactComponent} ,
   {path:'about', component:AboutComponent} ,
   {path:'', redirectTo:'home',pathMatch:'full'} ,

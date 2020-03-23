@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import  {Hike}  from './hike';
 import {HikeService} from './hike.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -15,10 +16,12 @@ export class HikeListComponent{
 hikes : any[];
 searchTerm :string;
 
-constructor(private _hikeService: HikeService){}
+constructor(private _hikeService: HikeService,
+            private route:ActivatedRoute){}
 
 
   ngOnInit(){
+  // this.hikes = this.route.snapshot.data.hikes;
     this._hikeService.GetHikesFromApiWithCache()
                      .subscribe(
                          res =>this.hikes = res,
