@@ -13,6 +13,8 @@ var hike_list_component_1 = require("./hike-list.component");
 var hike_service_1 = require("./hike.service");
 var hike_details_component_1 = require("./hike-details.component");
 var hike_filter_pipe_1 = require("./hike-filter.pipe");
+var hike_summary_component_1 = require("./hike-summary.component");
+// import { HikeResolveService } from './hike-resolver.service';
 var HikeModule = (function () {
     function HikeModule() {
     }
@@ -21,9 +23,10 @@ var HikeModule = (function () {
 HikeModule = __decorate([
     core_1.NgModule({
         imports: [common_1.CommonModule, router_1.RouterModule, forms_1.FormsModule],
-        declarations: [hike_list_component_1.HikeListComponent, hike_details_component_1.HikeDetailsComponent, hike_filter_pipe_1.HikeFilterPipe],
+        declarations: [hike_list_component_1.HikeListComponent, hike_details_component_1.HikeDetailsComponent, hike_filter_pipe_1.HikeFilterPipe, hike_summary_component_1.HikeSummaryComponent],
         exports: [hike_list_component_1.HikeListComponent],
-        providers: [hike_service_1.HikeService]
+        providers: [hike_service_1.HikeService,
+        ]
     })
 ], HikeModule);
 exports.HikeModule = HikeModule;

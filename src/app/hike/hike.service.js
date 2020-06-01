@@ -50,8 +50,14 @@ var HikeService = (function () {
             }
         };
     }
+    HikeService.prototype.GetDetails = function (id) {
+        if (id > 10)
+            return false;
+        return true;
+    };
     HikeService.prototype.GetHikesFromApi = function () {
-        return this._http.get('app/api/hikes.json')
+        return this._http
+            .get('app/api/hikes.json')
             .do(function (x) { return console.log(x); })
             .map(function (hikes) { return hikes.json(); })
             .catch(function (error) {

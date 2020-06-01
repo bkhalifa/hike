@@ -10,15 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var hike_service_1 = require("./hike.service");
+var router_1 = require("@angular/router");
 var HikeListComponent = (function () {
-    function HikeListComponent(_hikeService) {
+    function HikeListComponent(_hikeService, route) {
         this._hikeService = _hikeService;
+        this.route = route;
     }
     HikeListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._hikeService.GetHikesFromApi()
+        // this.hikes = this.route.snapshot.data.hikes;
+        this._hikeService.GetHikesFromApiWithCache()
             .subscribe(function (res) { return _this.hikes = res; }, function (err) { return console.log(err.status); });
         console.log(this.hikes);
+    };
+    HikeListComponent.prototype.addToMyToDoHike = function (hiketoadd) {
+        console.log("rando  " + hiketoadd.name + " ajout\u00E9e");
     };
     return HikeListComponent;
 }());
@@ -28,7 +34,8 @@ HikeListComponent = __decorate([
         selector: 'hike-list',
         templateUrl: 'hike-list.component.html'
     }),
-    __metadata("design:paramtypes", [hike_service_1.HikeService])
+    __metadata("design:paramtypes", [hike_service_1.HikeService,
+        router_1.ActivatedRoute])
 ], HikeListComponent);
 exports.HikeListComponent = HikeListComponent;
 //# sourceMappingURL=hike-list.component.js.map

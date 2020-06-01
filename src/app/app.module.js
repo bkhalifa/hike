@@ -15,6 +15,7 @@ var page_not_found_component_1 = require("./page-not-found.component");
 var app_routing_module_1 = require("./app-routing.module");
 var contact_module_1 = require("./contact/contact.module");
 var about_module_1 = require("./about/about.module");
+// import { HikeResolveService } from './hike/hike-resolver.service';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,7 +31,8 @@ AppModule = __decorate([
             http_1.HttpModule,
             app_routing_module_1.AppRoutingModule],
         declarations: [app_component_1.AppComponent, page_not_found_component_1.PageNotFound],
-        bootstrap: [app_component_1.AppComponent]
+        bootstrap: [app_component_1.AppComponent],
+        providers: []
     })
 ], AppModule);
 exports.AppModule = AppModule;
